@@ -33,18 +33,50 @@
 
 // Doing Q1 again,
 
-function showRatings(rating) {
+// function showRatings(rating) {
+//   let ratings = "";
+//   for (let i = 0; i < Math.floor(rating); i++) {
+//     ratings += "*";
+//     if (i !== Math.floor(ratings) - 1) { 
+//       ratings += " ";
+//     }
+//   }
+//   if (!Number.isInteger(rating)) {
+//     ratings += ".";
+//   }
+//   return ratings;
+// }
+
+// console.log(showRatings(4.5));
+//Doing Q1 again 2x
+
+// function showRatings (rating){
+//   let ratings = ""
+//   for (let i = 0; i < Math.floor(rating); i++){
+//     ratings += "*";
+//     if (i !== Math.floor(ratings) - 1){
+//       ratings += " ";
+//     }
+//   }
+//   if (!Number.isInteger(rating)){
+//     ratings += '.'
+//   }
+//   return ratings
+// }
+// console.log(showRatings(4.5))
+
+//Doing Q1 again III
+function showRatings(rating){
   let ratings = "";
-  for (let i = 0; i < Math.floor(rating); i++) {
-    ratings += "*";
-    if (i !== Math.floor(ratings) - 1) {
-      ratings += " ";
+  for(let i = 0; i < Math.floor(rating);i++){
+    ratings += '*'
+    if (i !== Math.floor(ratings) - 1){
+      ratings += " "
     }
   }
-  if (!Number.isInteger(rating)) {
-    ratings += ".";
+  if (!Number.isInteger(rating)){
+    ratings += "."
   }
-  return ratings;
+  return ratings
 }
-
-console.log(showRatings(4.5));
+console.log(showRatings(4.5))
