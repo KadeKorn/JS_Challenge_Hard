@@ -124,10 +124,21 @@ function sortHighToLow(obj) {
 // );
 
 //Q4
-async function postsByUser(userId) {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts"); // backend code not readable
+// async function postsByUser(userId) {
+//   const response = await fetch("https://jsonplaceholder.typicode.com/posts"); // backend code not readable
+//   const result = await response.json(); // json converts it to a readable format
+//   const posts = result.filter((element) => element.userId === userId); // this is saying to return only user objects with the userid of, the number we pass through in the parameters, 4
+//   console.log(posts);
+// }
+// postsByUser(3);
+
+//Q5
+
+async function firstSixIncomplete(userId) {
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos"); // backend code not readable
   const result = await response.json(); // json converts it to a readable format
-  const posts = result.filter((element) => element.userId === userId); // this is saying to return only user objects with the userid of, the number we pass through in the parameters, 4
-  console.log(posts);
+  const incomplete = result.filter((elem) => !elem.completed).slice(0, 6); // this is to return the first six incomplete
+  console.log(incomplete);
 }
-postsByUser(4);
+
+firstSixIncomplete(4);
