@@ -141,4 +141,69 @@ async function firstSixIncomplete(userId) {
   console.log(incomplete);
 }
 
-firstSixIncomplete(4);
+// firstSixIncomplete(4);
+
+//Q1
+
+function showRatings1(rating) {
+  let ratings = "";
+  for (let i = 0; i < Math.floor(rating); i++) {
+    ratings += "*";
+    if (i !== Math.floor(rating)) {
+      ratings += " ";
+    }
+  }
+  if (!Number.isInteger(rating)) {
+    ratings += ".";
+  }
+  return ratings;
+}
+// console.log(showRatings1(6));
+
+function showRatings2(rating) {
+  let ratings = "";
+  for (let i = 0; i < Math.floor(rating); i++) {
+    // math.floor rounds down so we dont get extra stars for decimals;
+    ratings += "*";
+    if (i !== Math.floor(rating)) {
+      ratings += " ";
+    }
+  }
+  if (!Number.isInteger(rating)) {
+    ratings += ".";
+  }
+  return ratings;
+}
+
+// console.log(showRatings2(4.5));
+
+//Q2
+
+function sortLowToHigh1(arr) {
+  for (let i = 1; i < arr.length; i++)
+    for (let j = 0; j < i; j++)
+      if (arr[i] < arr[j]) {
+        let x = arr[i];
+        arr[i] = arr[j];
+        arr[j] = x;
+      }
+  return arr;
+}
+function sortLowToHigh2(arr) {
+ return arr.sort((a, b) => a - b);
+}
+
+console.log(sortLowToHigh2([20, 40, 10, 30, 50, 10]));
+
+//Q3 given an array of objects return prices sorted high to low
+
+function sortHighToLow1(arr){
+  return arr.sort((a,b) => parseFloat(b.price) - parseFloat(a.price));
+}
+
+console.log(sortHighToLow([
+  {id:1,price:50},
+  {id:2,price:30},
+  {id:3,price:60},
+  {id:4,price:10},
+]))
